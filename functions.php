@@ -30,10 +30,10 @@ add_action( 'wp_enqueue_scripts', 'musterhausen_demo_assets' );
 function musterhausen_demo_menu_fallback() {
 	$items = array(
 		'/'                   => __( 'Startseite', 'musterhausen-demo' ),
+		'/buergerbuero/'      => __( 'Bürgerbüro', 'musterhausen-demo' ),
 		'/termin-buchen/'     => __( 'Termin buchen', 'musterhausen-demo' ),
 		'/formulare/'         => __( 'Formulare & Anträge', 'musterhausen-demo' ),
 		'/abfallkalender/'    => __( 'Abfallkalender', 'musterhausen-demo' ),
-		'/buergerbuero/'      => __( 'Bürgerbüro', 'musterhausen-demo' ),
 		'/aktuelles/'         => __( 'Aktuelles', 'musterhausen-demo' ),
 	);
 	echo '<ul>';
