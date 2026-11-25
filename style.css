@@ -1,0 +1,26 @@
+/*
+Theme Name: Gruenwerk Demo
+Theme URI: https://example.com/gruenwerk-demo
+Author: Remediate.AI demo
+Description: A small classic WordPress theme for a fictional garden nursery, built to demonstrate Klara's GitHub remediation on PHP theme templates. It contains deliberately planted accessibility issues; see README.md.
+Version: 1.0.0
+Requires at least: 6.0
+Requires PHP: 7.4
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: gruenwerk-demo
+*/
+
+:root { --green: #2f6b3a; --ink: #1d2a1f; --paper: #f7f5ef; }
+body { margin: 0; font-family: system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+a { color: var(--green); }
+.site-header, .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem 1.5rem; background: #fff; }
+.site-logo { display: block; width: 160px; height: auto; }
+.menu-toggle, .social-link { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; background: transparent; color: var(--green); cursor: pointer; }
+.menu-toggle svg, .social-link svg { width: 24px; height: 24px; }
+.site-main { max-width: 48rem; margin: 2rem auto; padding: 0 1.5rem; }
+.post-icon { width: 20px; height: 20px; vertical-align: middle; }
+.page-banner, .hero-image { width: 100%; height: auto; border-radius: 8px; }
+.search-form, .newsletter { display: flex; gap: .5rem; }
+.search-field, .newsletter-email { padding: .5rem .75rem; border: 1px solid #8a9a8c; border-radius: 4px; }
+.payment-methods { height: 24px; }
