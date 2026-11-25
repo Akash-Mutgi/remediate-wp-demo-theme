@@ -20,7 +20,7 @@
 	<p class="demo-banner">Demo – fiktive Website, keine echte Behörde</p>
 	<div class="header-inner">
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-link" rel="home">
-			<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/logo-musterhausen.svg" class="site-logo" width="56" height="56">
+			<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/logo-musterhausen.svg" class="site-logo" width="56" height="56" alt="Stadt Musterhausen Bürgerservice – zur Startseite">
 			<span class="brand-text">
 				<span class="brand-name">Stadt Musterhausen</span>
 				<span class="brand-tagline">Bürgerservice</span>
