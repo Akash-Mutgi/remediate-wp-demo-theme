@@ -67,18 +67,50 @@ axe-core 4.11 was run on the front page and on a content page, rendered as WordP
 
 Each draft PR changes exactly one line; the PHP code in the file is unchanged token for token.
 
-## Setting up the WordPress site
+## Setting up the site on WordPress.com (Business plan, GitHub Deployments)
 
-1. **Settings → General:** set *Site Language* to **Deutsch**, so the page carries `lang="de-DE"`. Set the title to "Stadt Musterhausen (Demo)".
-2. **Settings → Reading:** *Your homepage displays* → **Your latest posts**. Also tick *Discourage search engines from indexing this site*.
-3. **Settings → Permalinks:** **Post name**.
-4. Leave **Appearance → Menus** empty. The theme then shows its built-in navigation.
-5. Create the content below. **Do not add the custom fields `banner_alt` or `banner_credit`** to the page; R4 depends on them being empty.
-6. Disable page caching (or purge it after every merge) so a re-scan sees the deployed theme.
+Checked against the WordPress.com documentation on 2026-11-25. Steps marked *(not in the docs)* follow standard WordPress, because WordPress.com's own page for them was missing.
+
+**The repository root is the theme.** `style.css` with `Theme Name:` is at the top level, so the whole repository is deployed into one theme folder: **`/wp-content/themes/musterhausen-demo`**. The folder name is free. It doesn't have to match the repository name or the theme name; `musterhausen-demo` just keeps it readable.
+
+### 1. Connect the repository and deploy it
+
+1. Open the Hosting Dashboard (my.wordpress.com), click your site, then **Deployments** in the left sidebar.
+2. Click **Go to repositories** → **Connect repository** → **Install the WordPress.com app**.
+3. In the GitHub window: **Authorize WordPress.com for Developers**, pick the account `Akash-Mutgi`, choose **Only select repositories** → `remediate-wp-demo-theme`, then **Install**.
+4. Back on WordPress.com, click **Select** next to `remediate-wp-demo-theme` and fill in:
+   - **Deployment branch:** `main`
+   - **Destination directory:** `/wp-content/themes/musterhausen-demo`
+   - **Automatic deployments:** **Automatic** (every push to `main` deploys)
+   - **Deployment mode:** **Simple**
+5. Click **Connect**.
+6. Trigger the first deployment yourself: **⋮** next to the repository → **Trigger manual deployment**. Wait until the status changes from *Queued* to *Deployed*. **⋮** → **See deployment runs** shows the history.
+
+### 2. Activate the theme *(not in the docs)*
+
+WP Admin (`https://<your-site>/wp-admin`) → **Appearance → Themes** → "Musterhausen Bürgerservice (Demo)" → **Activate**.
+
+### 3. Settings
+
+| Setting | Where | Value |
+|---|---|---|
+| Site language | **Settings → General → Site Language**, then **Save Settings** | **Deutsch**, so pages carry `lang="de-DE"` |
+| Homepage | **Settings → Reading → Your homepage displays**, then **Save Changes** | **Your latest posts** |
+| Permalinks | **Settings → Permalinks**, then **Save Changes** | **Post name** |
+| Menu *(not in the docs)* | WP Admin → **Appearance → Menus** | Create none / assign none: the theme then shows its built-in navigation |
+| Custom fields | the Bürgerbüro page | Add none. R4 needs `banner_alt` and `banner_credit` to be empty. |
+| Site visibility | **Settings → General** (privacy) | **Public**: Klara's scanner can only reach a public site. The theme's `noindex` keeps search engines out. |
+| Global edge cache | Hosting Dashboard → site → **Settings → Server → Caching** | Leave **"Enable global edge caching…" off** for the demo, so a fresh deploy shows up immediately |
+
+### 4. After every deploy: clear the cache
+
+Hosting Dashboard → site → **Settings** → under **Server**, the **Caching** section → **Clear all** next to "Clear all caches". This clears the object cache and the page cache together (and the edge cache, if it's on). The button stays disabled for one minute afterwards. One WordPress.com page calls the section "Cache" and the button "Clear"; use whichever your screen shows.
+
+Then run Klara's scan.
 
 ## Demo content to paste into WordPress
 
-Create these with *Posts → Add New* and *Pages → Add New*. No featured images are needed.
+Create these in WP Admin with **Posts → Add New Post** and **Pages → Add New Page**. Paste the title into the title field and the text into the editor. For the page's three headings, type `/heading` in a new line. No featured images are needed.
 
 ### Post 1
 
