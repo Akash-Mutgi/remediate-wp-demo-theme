@@ -1,11 +1,14 @@
 <?php
 /**
- * Hero block shown on pages (loaded with get_template_part).
+ * Front-page hero (loaded with get_template_part).
  *
- * @package gruenwerk-demo
+ * @package musterhausen-demo
  */
 ?>
-<section class="hero">
-	<img class="hero-image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/greenhouse.svg">
-	<p class="hero-text"><?php esc_html_e( 'Fresh from our greenhouse.', 'gruenwerk-demo' ); ?></p>
+<section class="hero" aria-labelledby="hero-title">
+	<div>
+		<h1 id="hero-title">Willkommen beim Bürgerservice der Stadt Musterhausen</h1>
+		<p>Termine, Formulare und Informationen – rund um die Uhr online. Diese Website ist eine Demo und gehört zu keiner echten Stadt.</p>
+	</div>
+	<img class="hero-image" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/hero-musterplatz.svg" width="480" height="270">
 </section>

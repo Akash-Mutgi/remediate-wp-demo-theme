@@ -1,16 +1,15 @@
 <?php
 /**
- * The template for 404 (not found) pages.
+ * Not found.
  *
- * @package gruenwerk-demo
+ * @package musterhausen-demo
  */
 
 get_header();
 ?>
 <main id="primary" class="site-main">
-	<h1><?php esc_html_e( 'Page not found', 'gruenwerk-demo' ); ?></h1>
-	<p><?php esc_html_e( 'Try a search instead:', 'gruenwerk-demo' ); ?></p>
-	<?php get_search_form(); ?>
+	<h1>Seite nicht gefunden</h1>
+	<p>Die gesuchte Seite gibt es nicht. Nutzen Sie die Suche oben oder gehen Sie zur <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Startseite</a>.</p>
 </main>
 <?php
 get_footer();

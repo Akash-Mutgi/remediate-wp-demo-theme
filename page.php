@@ -1,19 +1,22 @@
 <?php
 /**
- * The template for single pages.
+ * Single page.
  *
- * @package gruenwerk-demo
+ * @package musterhausen-demo
  */
 
 get_header();
-$gruenwerk_banner = get_template_directory_uri() . '/assets/img/greenhouse.svg';
+$musterhausen_banner        = get_template_directory_uri() . '/assets/img/banner-buergerbuero.svg';
+$musterhausen_banner_alt    = (string) get_post_meta( get_queried_object_id(), 'banner_alt', true );
+$musterhausen_banner_credit = (string) get_post_meta( get_queried_object_id(), 'banner_credit', true );
 ?>
 <main id="primary" class="site-main">
-	<img class="page-banner" src="<?php echo esc_url( $gruenwerk_banner ); ?>" alt="<?php echo esc_attr( basename( $gruenwerk_banner ) ); ?>">
-	<?php get_template_part( 'template-parts/hero' ); ?>
+	<img class="page-banner" src="<?php echo esc_url( $musterhausen_banner ); ?>" alt="<?php echo esc_attr( $musterhausen_banner_alt ); ?> <?php echo esc_attr( $musterhausen_banner_credit ); ?>" width="960" height="240">
 	<?php while ( have_posts() ) : the_post(); ?>
-		<h1><?php the_title(); ?></h1>
-		<?php the_content(); ?>
+		<article <?php post_class(); ?>>
+			<h1><?php the_title(); ?></h1>
+			<?php the_content(); ?>
+		</article>
 	<?php endwhile; ?>
 </main>
 <?php
