@@ -40,7 +40,7 @@
 			<form class="newsletter" action="<?php echo esc_url( home_url( '/newsletter/' ) ); ?>" method="post">
 				<label for="newsletter-email">E-Mail-Adresse für den Rathaus-Newsletter</label>
 				<div class="newsletter-row">
-					<input type="email" id="newsletter-email" name="newsletter_email" class="newsletter-email" autocomplete="email">
+					<input type="email" id="newsletter-email" name="newsletter_email" class="newsletter-email" autocomplete="mail">
 					<button class="newsletter-submit">Anmelden</button>
 				</div>
 			</form>
