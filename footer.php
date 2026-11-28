@@ -30,7 +30,7 @@
 		<section aria-labelledby="footer-social">
 			<h2 id="footer-social">Musterhausen im Netz</h2>
 			<ul class="social-links">
-				<li><a href="https://www.instagram.com/" class="social-link social-instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/></svg></a></li>
+				<li><a href="https://www.instagram.com/" class="social-link social-instagram" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" fill="none"/></svg></a></li>
 				<li><a href="https://joinmastodon.org/" class="social-link social-mastodon" aria-label="Musterhausen auf Mastodon (Demo)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 5h14v10H9l-4 4z" stroke="currentColor" stroke-width="2" fill="none"/></svg></a></li>
 			</ul>
 			<?php echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/img/badge-digitale-verwaltung.svg' ) . '" class="footer-badge" width="120" height="40">'; ?>
